@@ -1,0 +1,38 @@
+.breadcrumbs {
+	padding-bottom: 39px;
+	padding-top: 33px;
+	@media (max-width: 1640px) {
+		@include adaptiv(padding-bottom, 39, 20, 1600, 320);
+		@include adaptiv(padding-top, 33, 20, 1600, 320);
+	}
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		a,
+		span {
+			font-size: 14px;
+			line-height: 1.86;
+			letter-spacing: 0.05em;
+			color: #000000;
+			@media (max-width: 576px) {
+				font-size: 13px;
+			}
+		}
+	}
+	// .breadcrumbs__break
+	&__break {
+		margin-left: 7px;
+		margin-right: 7px;
+		width: 32px;
+		height: 7px;
+		background: url("../img/break.svg") center / contain no-repeat;
+		@media (max-width: 576px) {
+			width: 22px;
+			height: 6px;
+		}
+	}
+
+	.currnet-item {
+	}
+}

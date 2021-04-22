@@ -1,0 +1,31 @@
+$font-family: "Montserrat", sans-serif;
+$minwidth: 320px;
+
+@function vw($value, $base: 1920) {
+	@return $value / $base * 100vw;
+}
+
+@function rem($value, $base) {
+	@return $value / $base + rem;
+}
+
+@function lh($value, $base) {
+	@return $value / $base;
+}
+
+@mixin adaptiv($property, $startSize, $minSize, $max-width, $min-width) {
+	$addSize: $startSize - $minSize;
+	#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$min-width + px}) / (#{$max-width - #{$min-width}})));
+}
+
+@mixin mail {
+	a[href^="mailto:"] {
+		@content;
+	}
+}
+
+@mixin tel {
+	a[href^="tel:"] {
+		@content;
+	}
+}

@@ -1,0 +1,128 @@
+.container {
+	max-width: 1157px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+html,
+body {
+	font-size: 18px;
+}
+
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	clip: rect(0 0 0 0);
+}
+
+.disable-scroll {
+	overflow: hidden;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+.help-img {
+	visibility: hidden;
+	opacity: 0;
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.flex-help {
+	overflow: hidden !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	height: 0 !important;
+	max-height: 0 !important;
+	min-height: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+div.wpcf7-response-output,
+div.wpcf7-validation-errors,
+div.wpcf7 .ajax-loader {
+	display: none !important;
+}
+
+span.wpcf7-not-valid-tip {
+	display: none;
+}
+
+.alertify-notifier {
+	z-index: 99997;
+}
+
+.wpcf7-not-valid {
+	border-color: red !important;
+}
+
+input[type="submit"] {
+	cursor: pointer;
+}
+
+[data-src="#modal-call"] {
+	cursor: pointer;
+}
+[data-src="#modal"] {
+	cursor: pointer;
+}
+
+.cross {
+	width: 14px;
+	height: 14px;
+	flex: 0 0 14px;
+	position: relative;
+	background-color: transparent;
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		background: #000;
+	}
+	&::after {
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 100%;
+		height: 2px;
+	}
+	&::before {
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 2px;
+		height: 100%;
+	}
+}
+
+// Анимации
+
+@keyframes gallery {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}

@@ -1,0 +1,89 @@
+.modal-container-polit {
+	display: none;
+	max-width: 95%;
+	max-height: 95%;
+	width: 1000px;
+	box-sizing: border-box;
+	padding: 36px 34px;
+	height: auto;
+	position: relative;
+}
+.modal-close-polit {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 15px;
+	right: 12px;
+	background-color: transparent;
+	cursor: pointer;
+
+	@media (min-width: 992px) {
+		&:hover.modal-close-polit::after,
+		&:hover.modal-close-polit::before {
+			background-color: #c5a995;
+		}
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: calc(50% - 1px);
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #000;
+		transition: background-color 0.3s;
+	}
+	&::before {
+		transform: rotate(-45deg);
+	}
+	&::after {
+		transform: rotate(45deg);
+	}
+}
+.modal-block-polit {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+.modal-content-polit {
+	line-height: 22px;
+}
+.title-modal-polit {
+	font-size: 29px;
+	font-weight: 700;
+	line-height: 35px;
+	margin-bottom: 15px;
+}
+.subtitle-modal-polit {
+	font-size: 15px;
+	margin-bottom: 15px;
+}
+.caption-modal-polit {
+	li {
+		background: url("../img/checked.svg") 0 3px / 12px 12px no-repeat;
+		padding-left: 25px;
+		font-size: 13px;
+		margin-bottom: 10px;
+		line-height: 17px;
+	}
+}
+
+@media (max-width: 768px) {
+	.modal-container-polit {
+		padding: 40px 20px 20px 20px;
+	}
+	.title-modal-polit {
+		font-size: 23px;
+		line-height: 24px;
+	}
+	.modal-close-polit {
+		top: 9px;
+		right: 10px;
+	}
+}

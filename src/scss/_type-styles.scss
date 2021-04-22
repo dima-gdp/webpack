@@ -1,0 +1,197 @@
+.type-style {
+	h1 {
+		margin-bottom: 35px;
+		@media (max-width: 992px) {
+			@include adaptiv(margin-bottom, 35, 20, 992, 320);
+		}
+	}
+	p,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	ul,
+	ol,
+	table {
+		margin-bottom: 25px;
+		@media (max-width: 992px) {
+			@include adaptiv(margin-bottom, 25, 15, 992, 320);
+		}
+	}
+	p {
+		font-size: 18px;
+		line-height: lh(26, 18);
+		@media (max-width: 992px) {
+			@include adaptiv(font-size, 18, 15, 992, 320);
+		}
+	}
+
+	h1 {
+		font-weight: 900;
+		font-size: 36px;
+		line-height: 1.28;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		@media (max-width: 1200px) {
+			@include adaptiv(font-size, 36, 25, 1200, 320);
+		}
+	}
+	h2 {
+		font-weight: 900;
+		font-size: 30px;
+		line-height: 1.33;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		@media (max-width: 1200px) {
+			@include adaptiv(font-size, 30, 16, 1200, 320);
+		}
+	}
+
+	h3 {
+		font-weight: 900;
+		font-size: 24px;
+		line-height: lh(34, 24);
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		@media (max-width: 1200px) {
+			@include adaptiv(font-size, 24, 15, 1200, 320);
+		}
+	}
+
+	h4 {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: lh(30, 20);
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		@media (max-width: 1200px) {
+			@include adaptiv(font-size, 20, 14, 1200, 320);
+		}
+	}
+
+	h5 {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: lh(30, 16);
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		@media (max-width: 992px) {
+			@include adaptiv(font-size, 16, 13, 992, 320);
+		}
+	}
+	ul,
+	ol {
+		margin-bottom: 23px;
+		li {
+			font-size: 20px;
+			line-height: 1.5;
+			@media (max-width: 992px) {
+				@include adaptiv(font-size, 20, 15, 992, 320);
+			}
+			&:not(:last-child) {
+				margin-bottom: 15px;
+				@media (max-width: 992px) {
+					@include adaptiv(margin-bottom, 15, 7, 992, 320);
+				}
+			}
+		}
+	}
+
+	ul li {
+		position: relative;
+		padding-left: 10px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0.6em;
+			left: 0;
+			width: 4px;
+			height: 4px;
+			border-radius: 100%;
+			background-color: #8ca03a;
+			overflow: hidden;
+		}
+	}
+	ol {
+		counter-reset: type;
+		list-style-type: none;
+		li {
+			position: relative;
+			padding-left: 30px;
+		}
+		li::before {
+			counter-increment: type;
+			content: counter(type) "/";
+			position: absolute;
+			top: 0.05em;
+			left: 0;
+			color: #8ca03a;
+		}
+	}
+	.table {
+		overflow-x: auto;
+	}
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		min-width: 420px;
+		font-size: 16px;
+		@media (max-width: 768px) {
+			font-size: 15px;
+		}
+		@media (max-width: 425px) {
+			font-size: 14px;
+		}
+		th {
+			padding: 15px 30px;
+			line-height: 1.62;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: #ffffff;
+			border-left: 3px solid #fff;
+			border-right: 3px solid #fff;
+			background: #000000;
+			text-align: left;
+			font-weight: 400;
+			@media (max-width: 992px) {
+				padding: 10px 20px;
+			}
+			@media (max-width: 768px) {
+				padding: 10px 15px;
+			}
+			&:first-child {
+				border-left: none;
+			}
+			&:last-child {
+				border-right: none;
+			}
+		}
+		td {
+			padding: 20px 34px;
+			line-height: 1.62;
+			letter-spacing: 0.05em;
+			color: #000;
+			border-left: 3px solid #fff;
+			border-right: 3px solid #fff;
+			@media (max-width: 992px) {
+				padding: 10px 20px;
+			}
+			@media (max-width: 768px) {
+				padding: 10px 15px;
+			}
+			&:first-child {
+				border-left: none;
+			}
+			&:last-child {
+				border-right: none;
+			}
+		}
+		tr {
+			background: #fff;
+		}
+		tr:nth-child(2n + 1) {
+			background: #f4f4f4;
+		}
+	}
+}

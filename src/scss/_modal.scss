@@ -1,0 +1,145 @@
+.modal-call {
+	display: none;
+	max-width: 530px;
+	width: 100%;
+	padding: 95px 0px 76px 0px;
+	background: #222226;
+	@media (max-width: 768px) {
+		@include adaptiv(padding-top, 95, 60, 768, 320);
+		@include adaptiv(padding-bottom, 76, 50, 768, 320);
+	}
+	// .modal-comment__close
+	&__close {
+	}
+	// .modal-comment__container
+	&__container {
+		max-width: 410px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	// .modal-comment__content
+	&__content {
+	}
+	// .modal-comment__title
+	&__title {
+		margin-bottom: 65px;
+		font-weight: 700;
+		font-size: 36px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #fff;
+		@media (max-width: 768px) {
+			@include adaptiv(font-size, 36, 24, 768, 320);
+			@include adaptiv(margin-bottom, 65, 30, 768, 320);
+		}
+	}
+	// .modal-comment__form
+	.wpcf7-form {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 30px;
+		@media (max-width: 576px) {
+			margin-bottom: 20px;
+		}
+	}
+	.wpcf7-form-control-wrap {
+		margin-bottom: 25px;
+		@media (max-width: 420px) {
+			margin-bottom: 20px;
+		}
+		input {
+			display: flex;
+			align-items: center;
+			padding: 5px 15px 5px 23px;
+			width: 100%;
+			height: 55px;
+			border: 1px solid #a4a4a4;
+			font-size: 20px;
+			color: #a4a4a4;
+			background-color: transparent;
+			@media (max-width: 768px) {
+				@include adaptiv(font-size, 20, 16, 768, 320);
+			}
+			@media (max-width: 576px) {
+				height: 50px;
+			}
+			@media (max-width: 420px) {
+				height: 45px;
+			}
+			&:focus {
+				color: #000;
+				border: 1px solid #ffffff;
+				background-color: #fff;
+				&::placeholder {
+					color: #000;
+				}
+			}
+		}
+	}
+
+	// .modal-comment__btn
+	&__btn {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 1.5;
+		color: #000000;
+		background: #fcb813;
+		text-transform: uppercase;
+
+		transform: perspective(1px) translateZ(0);
+		position: relative;
+		transition-property: color;
+		transition-duration: 0.3s;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #fff;
+			transform: scaleX(0);
+			transform-origin: 50%;
+			transition-property: transform;
+			transition-duration: 0.3s;
+			transition-timing-function: ease-out;
+		}
+		&:hover {
+			color: #000000;
+			&::before {
+				transform: scaleX(1);
+			}
+		}
+
+		@media (max-width: 768px) {
+			@include adaptiv(font-size, 20, 18, 1200, 768);
+		}
+	}
+	&__privacy {
+		font-size: 12px;
+		line-height: 1.33;
+		color: #c4c4c4;
+		@media (max-width: 420px) {
+			font-size: 11px;
+		}
+	}
+	.to-privacy {
+		text-decoration: underline;
+	}
+}
+
+.close-modal {
+	width: 47px;
+	height: 47px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #fff url(../img/close-modal.svg) 50% 50% no-repeat;
+	border: 1px solid #000000;
+	cursor: pointer;
+	@media (max-width: 576px) {
+		width: 40px;
+		height: 40px;
+	}
+}
